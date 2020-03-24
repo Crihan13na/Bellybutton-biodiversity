@@ -1,4 +1,6 @@
 function buildMetadata(sample) {
+  console.log("Hello");
+  
     // Use `d3.json` to fetch the metadata for a sample
     var metadata = d3.select("#sample-metadata");
     var url = "/metadata/" + sample;
@@ -6,7 +8,7 @@ function buildMetadata(sample) {
     d3.json(url).then(function(response) {
       console.log(response);
       $("#sample-metadata").empty();
-      Object.entries(response).forEach(([key, value]) => metadata.append("h5").text(`${key}: ${value}`));
+      Object.entries(response).forEach(([key, value]) => metadata.append("h3").text(`${key}: ${value}`));
     });
   }
   

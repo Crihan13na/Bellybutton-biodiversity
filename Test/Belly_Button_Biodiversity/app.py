@@ -18,7 +18,7 @@ app = Flask(__name__)
 # Database Setup
 #################################################
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/bellybutton.sqlite"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite://StarterCode/db/bellybutton.sqlite"
 db = SQLAlchemy(app)
 
 # reflect an existing database into a new model
@@ -38,16 +38,13 @@ def index():
 
 
 @app.route("/names")
-def
-
- names():
+def names():
     """Return a list of sample names."""
-
     # Use Pandas to perform the sql query
     stmt = db.session.query(Samples).statement
     df = pd.read_sql_query(stmt, db.session.bind)
-
     # Return a list of the column names (sample names)
+    
     print("This is the names route")
     print(jsonify(list(df.columns)[2:]))
     return jsonify(list(df.columns)[2:])
@@ -88,7 +85,6 @@ def samples(sample):
     """Return `otu_ids`, `otu_labels`,and `sample_values`."""
     stmt = db.session.query(Samples).statement
     df = pd.read_sql_query(stmt, db.session.bind)
-
     # Filter the data based on the sample number and
     # only keep rows with values above 1
     sample_data = df.loc[df[sample] > 1, ["otu_id", "otu_label", sample]]
@@ -102,7 +98,4 @@ def samples(sample):
 
 
 if __name__ == "__main__":
-    # Bind to PORT if defined, otherwise default to 5000.
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
-    # app.run()
+    app.run()
