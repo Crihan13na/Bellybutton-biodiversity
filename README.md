@@ -1,6 +1,6 @@
 # Plot.ly - Belly Button Biodiversity
 
-https://crihan13na.github.io/Bellybutton-biodiversity/
+ Web page: https://crihan13na.github.io/Bellybutton-biodiversity/
 
 
 ![Bacteria by filterforge.com](Images/bacteria.jpg)
@@ -61,15 +61,7 @@ The following task is advanced and therefore optional.
 
 ![Weekly Washing Frequency Gauge](Images/gauge.png)
 
-## Deployment
 
-Deploy your app to a free static page hosting service, such as GitHub Pages. Submit the links to your deployment and your GitHub repo.
-
-## Hints
-
-* Use `console.log` inside of your JavaScript code to see what your data looks like at each step.
-
-* Refer to the [Plotly.js documentation](https://plot.ly/javascript/) when building the plots.
 
 ### About the Data
 
